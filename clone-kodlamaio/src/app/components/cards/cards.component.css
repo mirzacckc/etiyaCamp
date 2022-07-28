@@ -1,0 +1,12 @@
+.card-container{
+    margin-left: 190px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family:'Montserrat',sans-serif;
+    font-size: 14px;
+}
+.card-container .row{
+    display:flex;
+    flex-wrap: wrap;
+}
+

@@ -1,0 +1,32 @@
+
+  .container {
+    background-color: #134361;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .navbar {
+   justify-content: space-between!important;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   border: 0;
+   padding: 0;
+   margin: 0;
+  }
+  .menu {
+    list-style: none;
+    align-items: center;
+  }
+  .menu li a{
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+  }
+  .menu li {
+   display: inline;
+   margin-left: 15px;
+  }
+  .user {
+    width: 30px;
+    border-radius: 50%;
+  }
+  

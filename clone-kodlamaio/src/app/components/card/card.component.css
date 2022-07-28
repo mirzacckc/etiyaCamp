@@ -1,0 +1,35 @@
+.card{  
+    width: 350px;
+    border: 1px solid blue;
+    border-radius: 15px;
+    box-shadow: 0px 1px white;
+}
+.card:hover{
+    box-shadow: black 1.5px 1.5px;
+}
+
+ .card .card-img-top{
+    justify-content: center;
+    display: flex;
+    width: 350px;
+    height: 230px;
+    border-radius: 15px;
+}
+ .card .card-body .inf {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+ .card .card-body .inf .col .teacher {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.card .card-body .inf .col {
+    align-items: center;
+  }
+  .card .card-body .inf .col h3 {
+    color: #134361;
+    font-weight: bold;
+  }

@@ -1,0 +1,21 @@
+@font-face { font-family: RalewayBold; 
+    src: url('src/assets/fonts/Raleway-Bold.ttf');
+
+    font-family: RalewayItalic;
+    src: url('src/assets/fonts/Raleway-Thin.ttf'); } 
+
+.rich-text{
+    padding: 50px 100px;
+}
+.rich-text p{
+    line-height: 2.4rem;
+}
+.container p{
+    font-size: 18px;
+    font-family: RalewayItalic;
+    font-weight: bold;
+}
+.container span{
+    font-size: 18px;
+    font-family: RalewayItalic;
+}

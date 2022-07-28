@@ -1,0 +1,22 @@
+.footer {
+    background: #134361;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    height: 120px;
+    align-items: center;
+  }
+  .footer ul {
+    list-style: none;
+    align-items: center;
+  }
+  .footer ul li a, p{
+    list-style: none;
+    color: #bac1c7;
+    text-decoration: none;
+  }
+  .footer li {
+  
+   margin-left: 15px;
+  }
