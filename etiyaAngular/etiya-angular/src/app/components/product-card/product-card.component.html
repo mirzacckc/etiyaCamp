@@ -1,0 +1,11 @@
+<div class="card m-2" style="width: 18rem;">
+    <img src="./assets/food.png">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">
+        {{product.unitPrice}}  $</p>
+        <p>Stock: {{product.unitsInStock}}</p>
+        <p>Quantity Per Unit: {{product.quantityPerUnit}}</p>       
+      <button (click)="addToCartEvent()" class="btn btn-dark">Add To Cart</button>
+    </div>
+  </div>
