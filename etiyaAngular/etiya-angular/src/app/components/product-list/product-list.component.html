@@ -1,7 +1,7 @@
 <p>Sepetinizde {{cartItems.length}} ürün var.</p>
 
 <ng-template [ngIf]="productList" [ngIfElse]="loading">
-    <div *ngIf="isProduct; else emptyProduct">
+    <div *ngIf="productList.length >0; else emptyProduct">
     <div class="row">
             <div class="col-4" *ngFor="let p of productList">
                 <etiya-product-card (onBtnClick)="addToCart($event)" [product]="p"></etiya-product-card>
@@ -10,8 +10,8 @@
     </div>
 </ng-template>
 <ng-template #emptyProduct>
-    <div class="alert alert-primary" role="alert">
-        There are no products
+    <div class="alert alert-danger" role="alert">
+        Products out of stock
     </div>
 </ng-template>
 <ng-template #loading>
