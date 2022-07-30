@@ -11,7 +11,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
-import { RegisterComponent } from './pages/register/register.component'
+import { RegisterComponent } from './pages/register/register.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RegisterComponent } from './pages/register/register.component'
     NavbarComponent,
     ProductCardComponent,
     CategoryListComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,

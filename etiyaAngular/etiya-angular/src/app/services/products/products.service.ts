@@ -16,7 +16,7 @@ export class ProductsService {
     return this.httpClient.get<Product[]>(this.apiControllerUrl)
   }
 
-  gwtById(id:number):Observable<Product>{
+  getById(id:number):Observable<Product>{
     return this.httpClient.get<Product>(`${this.apiControllerUrl}/${id}`)
   }
 
