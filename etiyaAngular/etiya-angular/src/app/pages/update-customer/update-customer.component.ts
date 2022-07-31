@@ -23,7 +23,8 @@ export class UpdateCustomerComponent implements OnInit {
   createUpdateCustomerForm(): void{
     this.updateCustomerForm = this.formBuilder.group({
       id:[this.customer.id,Validators.required],
-      companyName: [this.customer.companyName,Validators.required],
+      companyName: [this.customer.companyName
+        ,Validators.required],
       contactName: [this.customer.contactName,Validators.required],
       contactTitle: [this.customer.contactTitle,Validators.required],
       street: [this.customer.street,Validators.required],
@@ -48,16 +49,19 @@ export class UpdateCustomerComponent implements OnInit {
   }
 
   update() {
-    if (this.updateCustomerForm.valid) {
-      this.customer = Object.assign({}, this.updateCustomerForm.value);
+    if (this.updateCustomerForm.invalid) {
+      alert("Please fill the required areas!!!")
+      return;
     }
-    this.customerService.update(this.customer).subscribe((data) => {
-      setTimeout(() => {
-        location.reload();
-        location.href="/homepage"
-        alert("Customer succesfully updated!")
-      }, 1000);
-    });
+    this.customer = Object.assign({}, this.updateCustomerForm.value);
+      this.customerService.update(this.customer).subscribe((data) => {
+        setTimeout(() => {
+          location.reload();
+          location.href="/homepage"
+          alert("Customer succesfully updated!")
+        }, 1000);
+      });
+   
   }
 
 }
