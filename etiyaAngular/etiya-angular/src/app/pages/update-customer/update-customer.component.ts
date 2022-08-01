@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Customer } from 'src/app/models/customer';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 
@@ -11,57 +11,83 @@ import { CustomersService } from 'src/app/services/customers/customers.service';
 })
 export class UpdateCustomerComponent implements OnInit {
 
-  updateCustomerForm! : FormGroup;
-  selectedId!:number;
+  customerForm! : FormGroup;
   customer!: Customer
-  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,private customerService:CustomersService) { }
+  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,private customerService:CustomersService,private router:Router) { }
 
   ngOnInit(): void {
-    this.getCustomerById();
+    this.getCustomerIdFromRoute();
   }
 
-  createUpdateCustomerForm(): void{
-    this.updateCustomerForm = this.formBuilder.group({
-      id:[this.customer.id,Validators.required],
-      companyName: [this.customer.companyName
-        ,Validators.required],
-      contactName: [this.customer.contactName,Validators.required],
-      contactTitle: [this.customer.contactTitle,Validators.required],
-      street: [this.customer.street,Validators.required],
-      city: [this.customer.city,Validators.required],
-      region: [this.customer.region,Validators.required],
-      postalCode: [this.customer.postalCode,Validators.required],
-      country: [this.customer.country,Validators.required],
-      phone: [this.customer.phone,Validators.required],
-      customerKey: [this.customer.customerKey,Validators.required],
+  createCustomerForm(): void{
+    this.customerForm = this.formBuilder.group({
+      companyName: [this.customer?.companyName || '',Validators.required],
+      contactName: [this.customer?.contactName || '',Validators.required],
+      contactTitle: [this.customer?.contactTitle || '',Validators.required],
+      street: [this.customer?.street || '',Validators.required],
+      city: [this.customer?.city  || '',Validators.required],
+      region: [this.customer?.region || '',Validators.required],
+      postalCode: [this.customer?.postalCode  || '',Validators.required],
+      country: [this.customer?.country  || '',Validators.required],
+      phone: [this.customer?.phone  || '',Validators.required],
+      customerKey: [this.customer?.customerKey  || '',Validators.required],
 
     })   
   }
 
-  getCustomerById() {
+  getCustomerIdFromRoute(){
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) this.selectedId = params['id'];
+      if (params['id']) this.getCustomerById(params['id']);
+      else{
+        this.createCustomerForm();
+      };
     });
-    this.customerService.getCustomerById(this.selectedId).subscribe((data) => {
+  }
+
+  getCustomerById(id:number) {
+    this.customerService.getCustomerById(id).subscribe((data) => {
       this.customer = data;
-      this.createUpdateCustomerForm();
+      this.createCustomerForm();
     });
+  }
+
+  
+  save(){
+    if(this.customer) this.update();
+    else{
+      this.add();
+    }
   }
 
   update() {
-    if (this.updateCustomerForm.invalid) {
+    if (this.customerForm.invalid) {
       alert("Please fill the required areas!!!")
       return;
     }
-    this.customer = Object.assign({}, this.updateCustomerForm.value);
-      this.customerService.update(this.customer).subscribe((data) => {
+    const customer:Customer = Object.assign({id:this.customer.id}, this.customerForm.value); 
+      this.customerService.update(customer).subscribe(() => {
         setTimeout(() => {
-          location.reload();
-          location.href="/homepage"
+          this.router.navigateByUrl("/dashboard/customers");
           alert("Customer succesfully updated!")
         }, 1000);
       });
-   
   }
 
+  add(){
+    if (this.customerForm.invalid) {
+      console.warn("Gerekli alanları doldurunuz")
+      return;
+    }
+
+    const customer:Customer = {
+      ...this.customerForm.value,
+    }
+
+    this.customerService.add(customer).subscribe(response =>{
+      setTimeout(() => {
+        alert("Customer succesfully add!")
+        this.router.navigateByUrl("/dashboard/customers");
+      }, 1000);
+    })
+  }
 }
