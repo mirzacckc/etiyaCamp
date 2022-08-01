@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute,Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { CustomersService } from 'src/app/services/customers/customers.service';
 
@@ -13,7 +14,8 @@ export class UpdateCustomerComponent implements OnInit {
 
   customerForm! : FormGroup;
   customer!: Customer
-  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,private customerService:CustomersService,private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,
+    private customerService:CustomersService,private router:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getCustomerIdFromRoute();
@@ -61,21 +63,21 @@ export class UpdateCustomerComponent implements OnInit {
 
   update() {
     if (this.customerForm.invalid) {
-      alert("Please fill the required areas!!!")
+      this.toastr.warning("Please fill the required areas!!!","Update")
       return;
     }
     const customer:Customer = Object.assign({id:this.customer.id}, this.customerForm.value); 
       this.customerService.update(customer).subscribe(() => {
         setTimeout(() => {
           this.router.navigateByUrl("/dashboard/customers");
-          alert("Customer succesfully updated!")
+          this.toastr.success("Customer succesfully updated!","Update")
         }, 1000);
       });
   }
 
   add(){
     if (this.customerForm.invalid) {
-      console.warn("Gerekli alanları doldurunuz")
+      this.toastr.warning("Please fill the required areas!!!","Add")
       return;
     }
 
@@ -85,7 +87,7 @@ export class UpdateCustomerComponent implements OnInit {
 
     this.customerService.add(customer).subscribe(response =>{
       setTimeout(() => {
-        alert("Customer succesfully add!")
+        this.toastr.success("Customer succesfully add!","Add")
         this.router.navigateByUrl("/dashboard/customers");
       }, 1000);
     })
