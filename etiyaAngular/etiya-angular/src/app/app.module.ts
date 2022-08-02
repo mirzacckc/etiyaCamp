@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
 import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
+import { ProductFormComponent } from './pages/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-
     CategoryListComponent,
     RegisterComponent,
     CustomerFormComponent,
-    CustomerDashboardComponent
+    CustomerDashboardComponent,
+    ProductDashboardComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
