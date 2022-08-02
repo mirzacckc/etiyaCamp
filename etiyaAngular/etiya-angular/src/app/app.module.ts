@@ -12,10 +12,10 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
+import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     ProductCardComponent,
     CategoryListComponent,
     RegisterComponent,
-    DashboardComponent,
-    UpdateCustomerComponent
+    CustomerFormComponent,
+    CustomerDashboardComponent
   ],
   imports: [
     BrowserModule,
