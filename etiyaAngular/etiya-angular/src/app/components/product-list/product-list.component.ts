@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import Product from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products/products.service';
@@ -10,6 +10,8 @@ import { ProductsService } from 'src/app/services/products/products.service';
 })
 export class ProductListComponent implements OnInit {
 
+today: number = Date.now();
+filterText:string="";
 //isProduct:boolean = false;
 productList!:Product[];
 cartItems: any[] =[];
