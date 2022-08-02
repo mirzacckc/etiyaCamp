@@ -18,6 +18,8 @@ import { CustomerFormComponent } from './pages/customer-form/customer-form.compo
 import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
 import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard.component';
 import { ProductFormComponent } from './pages/product-form/product-form.component';
+import { KdvPipe } from './pipes/kdv/kdv.pipe';
+import { SaleDirective } from './directives/sale/sale.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ProductFormComponent } from './pages/product-form/product-form.componen
     CustomerFormComponent,
     CustomerDashboardComponent,
     ProductDashboardComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    KdvPipe,
+    SaleDirective
   ],
   imports: [
     BrowserModule,
