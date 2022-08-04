@@ -1182,6 +1182,58 @@
       "country": "Poland",
       "phone": "(26) 642-7012",
       "customerKey": "WOLZA"
+    },
+    {
+      "companyName": "ab",
+      "contactName": "a",
+      "contactTitle": "b",
+      "street": "c",
+      "city": "d",
+      "region": "e",
+      "postalCode": "f",
+      "country": "g",
+      "phone": "h",
+      "customerKey": "j",
+      "id": 92
+    },
+    {
+      "companyName": "aa",
+      "contactName": "aa",
+      "contactTitle": "a",
+      "street": "a",
+      "city": "a",
+      "region": "a",
+      "postalCode": "a",
+      "country": "a",
+      "phone": "a",
+      "customerKey": "a",
+      "id": 93
+    },
+    {
+      "companyName": "kodlamaio",
+      "contactName": "Ahmet Çetinkaya",
+      "contactTitle": "Eğitmen",
+      "street": "1234",
+      "city": "ANTALYA",
+      "region": "Kepez",
+      "postalCode": "0700",
+      "country": "Turkey",
+      "phone": "0500000000",
+      "customerKey": "AHMET",
+      "id": 94
+    },
+    {
+      "companyName": "asda",
+      "contactName": "a",
+      "contactTitle": "aa",
+      "street": "aa",
+      "city": "AA",
+      "region": "aa",
+      "postalCode": "aa",
+      "country": "aa",
+      "phone": "aa",
+      "customerKey": "aaa",
+      "id": 95
     }
   ],
   "products": [
@@ -2150,6 +2202,14 @@
       "id": 8,
       "description": "Seaweed and fish",
       "name": "Seafood"
+    },
+    {
+      "id": 9
+    },
+    {
+      "description": "DescTest",
+      "name": "NameTest",
+      "id": 10
     }
   ],
   "suppliers": [
@@ -33049,5 +33109,29 @@
       "phone": "(503) 555-9931"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "userName": "admin",
+      "password": "admin"
+    },
+    {
+      "userName": "test",
+      "password": "test",
+      "id": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin"
+    }
+  ],
+  "userRoles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roleId": 1
+    }
+  ]
 }
