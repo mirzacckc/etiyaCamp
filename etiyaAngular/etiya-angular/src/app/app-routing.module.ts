@@ -11,13 +11,13 @@ import { ProductFormComponent } from './pages/product-form/product-form.componen
 const routes: Routes = [
   {path:'', redirectTo:'homepage', pathMatch:'full'},
   {path:'homepage', component:HomepageComponent},
-  {path: 'add-product', component:AddProductComponent},
+  //{path: 'add-product', component:AddProductComponent},
   {path: 'dashboard/customer/add',component:CustomerFormComponent },
   {path: 'dashboard/customers',component:CustomerDashboardComponent },
   {path: 'dashboard/customer/:id',component:CustomerFormComponent },
-  {path: 'dashboard/product/add',component:ProductFormComponent },
-  {path: 'dashboard/products',component:ProductDashboardComponent },
-  {path: 'dashboard/product/:id',component:ProductFormComponent },
+  //{path: 'dashboard/product/add',component:ProductFormComponent },
+  //{path: 'dashboard/products',component:ProductDashboardComponent },
+  //{path: 'dashboard/product/:id',component:ProductFormComponent },
   {path: 'order-list',component:OrderListComponent },
 
 
