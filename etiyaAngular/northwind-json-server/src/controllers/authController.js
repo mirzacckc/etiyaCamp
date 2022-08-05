@@ -11,8 +11,11 @@ const login = (req, res, next) => {
   if (!userName || !password) return next(new CustomError('Please check your inputs'), 400);
 
   const db = readJsonFile(process.env.DB_PATH),
-    user = db.users.find(user => user.userName === userName),
-    userRoles = db.userRoles.find(userRole => userRole.userId === user.id);
+    user = db.users.find(user => user.userName === userName);
+
+  if(!user) return next(new CustomError('Please check your input'), 400 )
+  
+  const userRoles = db.userRoles.find(userRole => userRole.userId === user.id);
 
   if (!user || user.password !== password)
     return next(new CustomError('Please check your credentials', 401));
