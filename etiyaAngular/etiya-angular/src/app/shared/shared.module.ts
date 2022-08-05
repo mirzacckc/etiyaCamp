@@ -4,6 +4,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { CategoriesModule } from '../features/categories/categories.module';
 import { ProductsModule } from '../features/products/products.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 
@@ -14,8 +16,10 @@ import { ProductsModule } from '../features/products/products.module';
   ],
   imports: [
     CommonModule,
+    SharedRoutingModule,    
     CategoriesModule,
-    ProductsModule
+    ProductsModule,
+    BrowserModule,
   ],
   exports:[NavbarComponent]
 })
