@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/auth/services/auth.service';
+import { CartSummaryModel } from 'src/app/features/cart/models/cartSummaryModel';
+import { CartSummaryService } from 'src/app/features/cart/services/cart-summary/cart-summary.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,9 @@ export class NavbarComponent implements OnInit {
 
   //today: number = Date.now();
 
-  constructor(private authService:AuthService) { }
+  
+
+  constructor(private authService:AuthService,private cartSummaryService:CartSummaryService) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +24,14 @@ export class NavbarComponent implements OnInit {
       console.log(response)
     })
   }
+
+  isLoggedIn(){
+    return this.authService.isAuthhenticated
+  }
+
+  logOut(){
+    this.authService.logOut()
+  }
+
 
 }

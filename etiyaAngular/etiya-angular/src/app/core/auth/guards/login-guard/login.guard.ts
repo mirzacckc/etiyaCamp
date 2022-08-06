@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginGuard implements CanActivate {
 
-  constructor(private authService:AuthService,private router:Router){}
+  constructor(private authService:AuthService,private router:Router,private toastrService:ToastrService){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,10 +17,12 @@ export class LoginGuard implements CanActivate {
 
     if (!this.authService.isAuthhenticated) {
       this.router.navigateByUrl("login")
+      this.toastrService.warning('Please sign in to continue!')
       return false;
         
     }
-
+    
+    this.toastrService.success('Please sign in to continue!')
     return true;
   }
   
