@@ -9,7 +9,7 @@ import { LocalStrorageService } from '../../storage/services/local-storage/local
 import { TokenUserModel } from '../models/tokenUserModel';
 import { UserForLoginModel } from '../models/userForLoginModel';
 import { UserLoginResponseModel } from '../models/userLoginResponseModel';
-import { setTokenUserModel } from '../store/actions/auth.actions';
+import { removeTokenUserModel, setTokenUserModel } from '../store/actions/auth.actions';
 import { AuthStates } from '../store/auth.reducer';
 
 @Injectable({
@@ -54,8 +54,14 @@ export class AuthService {
     this.store.dispatch(setTokenUserModel({tokenUserModel}));
   }
 
+  removeUserToken() {
+    this.store.dispatch(removeTokenUserModel());
+  }
+
   logOut(){
+    this.removeUserToken();
     return this.localStrorageService.remove('token')
+    
   }
 }
 
