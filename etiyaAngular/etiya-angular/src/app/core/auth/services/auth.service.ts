@@ -10,15 +10,15 @@ import { TokenUserModel } from '../models/tokenUserModel';
 import { UserForLoginModel } from '../models/userForLoginModel';
 import { UserLoginResponseModel } from '../models/userLoginResponseModel';
 import { removeTokenUserModel, setTokenUserModel } from '../store/actions/auth.actions';
-import { AuthStates } from '../store/auth.reducer';
+import { AuthStates } from '../store/auth.reducers';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   tokenUserModel$: Observable<TokenUserModel | undefined> = this.store
-  .select(state => state.appAuth.tokenUserModel)
-  .pipe(map(state => state));
+  .select(state => state.appAuth)
+  .pipe(map(state => state.tokenUserModel));
 
   apicontrollerUrl:string = `${environment.apiUrl}/auth`;
 

@@ -10,7 +10,7 @@ import { tokenGetter } from './services/auth.service';
 import { environment } from 'src/environments/environment';
 import { AuthInterceptor } from './intercepters/auth/auth.interceptor';
 import { StoreModule } from '@ngrx/store';
-import { authReducers } from './store/auth.reducer';
+import { authReducers } from './store/auth.reducers';
 
 
 @NgModule({
