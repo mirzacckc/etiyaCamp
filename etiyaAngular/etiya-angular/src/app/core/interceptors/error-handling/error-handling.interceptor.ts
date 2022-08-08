@@ -24,7 +24,7 @@ export class ErrorHandlingInterceptor implements HttpInterceptor {
                             errorMessage = `Server Side Error , ${errorResponse.error.message} Status Code: ${errorResponse.status}`;
                           }
 
-                          return throwError(errorMessage)
+                          return throwError(() => new Error(errorMessage))
                         }));
     
   }
