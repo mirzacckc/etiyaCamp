@@ -1,4 +1,14 @@
-<etiya-navbar></etiya-navbar>
-<router-outlet></router-outlet>
-<etiya-footer></etiya-footer>
+<div class="min-vh-100 d-flex flex-column">
+    <header>
+        <etiya-navbar></etiya-navbar>
+    </header>
+  
+    <main class="flex-fill">
+      <router-outlet></router-outlet>
+    </main>
+  
+    <footer>
+        <etiya-footer></etiya-footer>
+    </footer>
+  </div>
 <p-toast></p-toast>
