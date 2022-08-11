@@ -6,7 +6,7 @@ import { Service } from '../../models/service';
 import { ServicesService } from '../../services/services.service';
 
 @Component({
-  selector: 'app-service-form',
+  selector: 'etiya-service-form',
   templateUrl: './service-form.component.html',
   styleUrls: ['./service-form.component.css']
 })

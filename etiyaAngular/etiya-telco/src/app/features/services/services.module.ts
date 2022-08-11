@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ServicesRoutingModule } from './services-routing.module';
-import { ServiceListComponent } from './components/service-list/service-list.component';
 import { ServiceFormComponent } from './components/service-form/service-form.component';
 
 import {TableModule} from 'primeng/table';
@@ -11,12 +10,15 @@ import {RatingModule} from 'primeng/rating';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToolbarModule} from 'primeng/toolbar';
 import {InputTextModule} from 'primeng/inputtext';
+import { ServiceDashboardComponent } from './components/service-dashboard/service-dashboard.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
-    ServiceListComponent,
-    ServiceFormComponent
+    ServiceFormComponent,
+    ServiceDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,11 @@ import {InputTextModule} from 'primeng/inputtext';
     FormsModule,
     ToolbarModule,
     InputTextModule,    
-    ReactiveFormsModule,    
+    ReactiveFormsModule 
+  ],
+  exports:[    
+    ServiceFormComponent,
+    ServiceDashboardComponent
   ]
 })
 export class ServicesModule { }

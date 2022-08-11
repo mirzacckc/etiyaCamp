@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ServiceDashboardComponent } from './components/service-dashboard/service-dashboard.component';
 import { ServiceFormComponent } from './components/service-form/service-form.component';
-import { ServiceListComponent } from './components/service-list/service-list.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'services', pathMatch:'full'},
-  {path:'services',component:ServiceListComponent},
+  
+  {path:'services',component:ServiceDashboardComponent},
   {path:'service/add',component:ServiceFormComponent},
   {path:'service/:id',component:ServiceFormComponent},
 
