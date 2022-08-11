@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    HomepageComponent
+    HomepageComponent,
   ],
   imports: [
     CommonModule,
@@ -19,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsModule,
     SharedModule,
     CategoriesModule,    
-    HttpClientModule
+    HttpClientModule,
+  ],
+  exports:[
   ]
 })
 export class FeaturesModule { }

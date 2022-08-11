@@ -38,8 +38,9 @@ export class CategoriesMenuBarComponent implements OnInit {
         routerLink: [''],
         queryParams: {categoryId: category.id},
       };
-    })
-    
+    });
+    this.items.unshift({label:'All',
+    routerLink:['']})    
   }
 
 }
