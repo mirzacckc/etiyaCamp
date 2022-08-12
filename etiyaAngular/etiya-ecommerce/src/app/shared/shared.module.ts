@@ -5,6 +5,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import {SkeletonModule} from 'primeng/skeleton';
 import { CardSkeletonComponent } from './components/card-skeleton/card-skeleton.component';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -17,7 +18,8 @@ import { CardSkeletonComponent } from './components/card-skeleton/card-skeleton.
   ],
   imports: [
     CommonModule,
-    SkeletonModule
+    SkeletonModule,
+    CoreModule
     
   ],
   exports:[

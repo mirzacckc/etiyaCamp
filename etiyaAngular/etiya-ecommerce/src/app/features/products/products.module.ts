@@ -7,19 +7,27 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { FilterProductPipe } from './pipes/filter-product/filter-product.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { AddProductComponent } from './components/pages/add-product/add-product.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ProductCardComponent,
     ProductListComponent,
-    FilterProductPipe
+    FilterProductPipe,
+    AddProductComponent
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    InputTextModule,
+    ButtonModule,
+    ReactiveFormsModule
   ],
   exports:[
     ProductListComponent
