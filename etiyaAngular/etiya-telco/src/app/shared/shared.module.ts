@@ -7,6 +7,8 @@ import { ButtonModule } from 'primeng/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { ListSkeletonComponent } from './components/list-skeleton/list-skeleton.component';
+import {SkeletonModule} from 'primeng/skeleton';
 
 
 
@@ -15,20 +17,23 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     NavbarComponent,
     FooterComponent,
     DashboardLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    ListSkeletonComponent
   ],
   imports: [
     CommonModule,
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    SkeletonModule
 
   ],
   exports:[
     NavbarComponent,
     FooterComponent,
     DashboardLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    ListSkeletonComponent
   ]
 })
 export class SharedModule { }

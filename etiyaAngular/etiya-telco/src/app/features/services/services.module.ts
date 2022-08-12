@@ -12,6 +12,7 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {InputTextModule} from 'primeng/inputtext';
 import { ServiceDashboardComponent } from './components/service-dashboard/service-dashboard.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 
@@ -29,7 +30,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     ToolbarModule,
     InputTextModule,    
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    SharedModule,
+    CoreModule
   ],
   exports:[    
     ServiceFormComponent,

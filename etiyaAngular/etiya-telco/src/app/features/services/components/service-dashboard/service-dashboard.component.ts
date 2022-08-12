@@ -9,7 +9,11 @@ import { ServicesService } from '../../services/services.service';
   styleUrls: ['./service-dashboard.component.css']
 })
 export class ServiceDashboardComponent implements OnInit {
+
   services!: Service[];
+  fetchStatus!:string;
+  skeletonSize:number =5;
+  currentPage:number =0;
 
   constructor(private serviceService: ServicesService,private router:Router) { }
 
@@ -18,7 +22,17 @@ export class ServiceDashboardComponent implements OnInit {
   }
 
   getServicesList(){
-    this.serviceService.getAll().subscribe(data => this.services = data);
+    this.fetchStatus = 'pending'
+    setTimeout(() => {
+      this.serviceService.getAll().subscribe((data =>{
+        this.services = data
+        this.fetchStatus = 'loaded'
+      }),
+      (error) =>{
+        this.fetchStatus = 'error'
+      })
+    }, 1500);
+  
   }
 
   deleteService(id:number){
