@@ -1,0 +1,53 @@
+<etiya-main-layout>
+    <div class="grid p-fluid">
+        <br>
+        <h3 style="color:blue">Add Product</h3>
+        <br>
+        <form [formGroup]="addProductForm">
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="name">
+                    <label for="float-input">Name</label>
+                </span>
+            </div>
+
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="reOrderLevel">
+                    <label for="float-input">Recorder Level</label>
+                </span>
+            </div>
+
+
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="unitsInOrder">
+                    <label for="float-input">Units in Order</label>
+                </span>
+            </div>
+
+
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="unitsInStock">
+                    <label for="float-input">Units in Stock</label>
+                </span>
+            </div>
+
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="unitsPrice">
+                    <label for="float-input">Units Price</label>
+                </span>
+            </div>
+
+            <div class="col-4 md:col-4 mb-4">
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="quantityPerUnit">
+                    <label for="float-input">Quantity Per Unit</label>
+                </span>
+            </div>
+            <button style="width:430px" (click)="addProduct()" pButton type="button" label="Add Product" ></button>
+        </form>
+    </div>
+</etiya-main-layout>
