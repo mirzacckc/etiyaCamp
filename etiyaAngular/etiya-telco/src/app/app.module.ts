@@ -13,6 +13,7 @@ import { CoreModule } from './core/core.module';
 import { OverlayLoadingInterceptor } from './core/interceptors/overlay-loading/overlay-loading.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +26,7 @@ import { OverlayLoadingInterceptor } from './core/interceptors/overlay-loading/o
     HttpClientModule,
     ToastModule,    
     BrowserAnimationsModule, 
-    CoreModule,
+    CoreModule
   ],
   providers: [MessageService,
     {provide: HTTP_INTERCEPTORS, useClass: OverlayLoadingInterceptor, multi: true}],

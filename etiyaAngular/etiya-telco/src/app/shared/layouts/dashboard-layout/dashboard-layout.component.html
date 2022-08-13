@@ -1,10 +1,16 @@
 <div class="min-vh-100 d-flex flex-column">
-    <header>
-        <etiya-navbar></etiya-navbar>
-    </header>
-  
-    <main class="flex-fill">
+  <header>
+    <etiya-navbar></etiya-navbar>
+  </header>
+
+  <main class="flex-fill  w-100">
+    <div class="container mt-5">
       <ng-content></ng-content>
-    </main>
+    </div>
+  </main>
+
+  <footer>
+    <etiya-footer></etiya-footer>
+  </footer>
 
 </div>

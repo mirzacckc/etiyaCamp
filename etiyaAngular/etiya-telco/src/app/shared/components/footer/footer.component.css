@@ -3,14 +3,14 @@
 
 section .section-title {
     text-align: center;
-    color: #64a9ee;
+    color: #210B2C;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
 #footer {
     position: relative;
     bottom: 0;
-    background: #64a9ee !important;
+    background: #210B2C !important;
     width: 100%;
     margin-top: 30px;
 }
