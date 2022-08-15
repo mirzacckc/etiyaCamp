@@ -2,15 +2,18 @@
     <div class="row">
         <ng-container [ngSwitch]="fetchStatus">
             <div *ngSwitchCase="'loaded'" class="card">
-                <p-toolbar styleClass="p-mb-4" >
-                    <ng-template pTemplate="left">
-                        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+                <p-toolbar>                    
+                    <ng-template pTemplate="right">                        
+                        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-light p-mr-2 mc"
                             routerLink="/service/add"></button>
+                    </ng-template>
+                    <ng-template pTemplate="left">                        
+                        <h2>SERVICES</h2>
                     </ng-template>
                 </p-toolbar>
                 <p-table [value]="services" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                    [rowsPerPageOptions]="[5,10,15]">
+                    [rowsPerPageOptions]="[5,10,15]" class="table-st">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Id</th>
@@ -39,7 +42,7 @@
                 </p-table>
             </div>
             <ng-container *ngSwitchCase="'pending'">
-                <div class="col-7 mb-3 mt-4" *ngFor="let i of skeletonSize | createFakeArray">
+                <div class="col-7 mb-2 mt-2" *ngFor="let i of skeletonSize | createFakeArray">
                     <etiya-list-skeleton></etiya-list-skeleton>
                 </div>
             </ng-container>

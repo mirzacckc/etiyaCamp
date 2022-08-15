@@ -1,18 +1,22 @@
 
 @import "primeflex/primeflex.css";
 
-.mirza{
+.mc{
     background-color: #55286F !important;
 }
 
 .text-900{
-    color: #F17105 !important;
+    color: #f5821f !important;
 }
 
 .text-600{
-    color: #F17105 !important;
+    color: #f5821f !important;
 }
 
 button{
-    color: #F17105 !important;
+    color: #f5821f !important;
+}
+
+.text-500{
+    color: white !important;
 }

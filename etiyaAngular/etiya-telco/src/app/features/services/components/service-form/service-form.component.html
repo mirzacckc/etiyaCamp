@@ -1,5 +1,8 @@
 <etiya-dashboard-layout>
   <div class="container w-75" *ngIf="serviceForm">
+    <div class="m-3">
+      <h2>{{header}}</h2>
+    </div>
     <form [formGroup]="serviceForm" (ngSubmit)="save()" >
       <div class="form-group m-3">
         <label for="name" class="block">Name</label>

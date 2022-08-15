@@ -14,6 +14,7 @@ export class ServiceFormComponent implements OnInit {
 
   serviceForm! : FormGroup;
   service!:Service;   
+  header:string = 'Hello';
   
   constructor(private formBuilder:FormBuilder,private activatedRoute:ActivatedRoute,
     private servicesService:ServicesService,private router:Router,private messageService:MessageService) { }
@@ -30,8 +31,12 @@ export class ServiceFormComponent implements OnInit {
   
   getServiceIdFromRoute(){
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) this.getServiceById(params['id']);
-      else{
+      if (params['id']){
+        this.header = 'Update Service';
+        this.getServiceById(params['id']);
+      }
+      else{        
+        this.header = 'Add Service';
         this.createServiceForm();
       };
     });
@@ -47,13 +52,16 @@ export class ServiceFormComponent implements OnInit {
 
   
   save(){
-    if(this.service) this.update();
+    if(this.service){      
+      this.update();
+    }
+
     else{
       this.add();
     }
   }
 
-  update() {
+  update() {    
     if (this.serviceForm.invalid) {
       this.messageService.add({severity:'warn', summary:'Update', detail:'Please fill the required areas!!!'});
       return;
@@ -67,7 +75,7 @@ export class ServiceFormComponent implements OnInit {
       });
   }
 
-  add(){
+  add(){    
     if (this.serviceForm.invalid) {
       this.messageService.add({severity:'warn', summary:'Add', detail:'Please fill the required areas!!!'});
       return;

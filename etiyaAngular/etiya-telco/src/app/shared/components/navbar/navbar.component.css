@@ -1,0 +1,17 @@
+nav{
+    background-color:#210B2C;
+    height: 80px;
+}
+
+.d-flex .btn-light:hover{
+    background-color: #f5821f;
+    color:white;
+    border-color: #f5821f;
+}
+
+.d-flex .btn-light{
+    background-color: transparent;
+    color:#f5821f;
+    border-color: #f5821f;
+    margin-left: 10px;
+}

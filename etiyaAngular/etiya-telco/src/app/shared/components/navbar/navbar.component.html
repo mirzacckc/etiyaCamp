@@ -1,28 +1,38 @@
-<nav class="navbar navbar-dark navbar-expand-lg" style="background-color:#210B2C;height: 80px;">
-    <div class="container-fluid">
-      <a class="navbar-brand" >Etiya Telco</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="" routerLinkActive="active" >Home Page</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" >A</a></li>
-              <li><a class="dropdown-item" >B</a></li>
-            </ul>
-          </li>          
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand">Etiya Telco</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="" routerLinkActive="active">Home Page</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/services" routerLinkActive="true">Service Dasboard</a></li>
+            <li><a class="dropdown-item" routerLink="/service/add" routerLinkActive="true">Service Form</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit" routerLink="/login"
+          routerLinkActive="active">Login</button>
+          <button class="btn btn-light" type="submit" routerLink="/login">SignUp</button>
+        <!-- <button class="btn btn-outline-danger" type="submit" routerLink="/login"
+          routerLinkActive="active">LogOut</button> -->
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
+
+<!-- <button class="btn btn-success" type="submit" routerLink="/login" *ngIf="isLoggedIn()==false"
+          routerLinkActive="active">Login</button>
+        <button class="btn btn-danger" type="submit" routerLink="/login" *ngIf="isLoggedIn()==true" (click)="logOut()"
+          routerLinkActive="active">LogOut</button>     -->
