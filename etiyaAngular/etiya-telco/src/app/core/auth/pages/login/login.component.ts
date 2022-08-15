@@ -26,14 +26,13 @@ export class LoginComponent implements OnInit {
   
   login() {
     this.authService.login(this.loginForm.value).subscribe((response) => {
-      console.log(response);
-      if (response.success) {
+      console.log(response, new Date().toISOString());      
         this.authService.saveToken(response);
         setTimeout(() => {
           this.router.navigateByUrl('homepage')
         }, 1000);
        
-      }
+      
     });
   }
 

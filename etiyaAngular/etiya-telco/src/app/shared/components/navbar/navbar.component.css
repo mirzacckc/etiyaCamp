@@ -15,3 +15,7 @@ nav{
     border-color: #f5821f;
     margin-left: 10px;
 }
+
+.d-flex .btn-outline-light{
+    margin-right: 10px;
+}
