@@ -1,6 +1,12 @@
-<etiya-navbar></etiya-navbar>
-<div class="container">
-    <ng-content></ng-content>
+<div class="min-vh-100 d-flex flex-column">
+    <etiya-navbar></etiya-navbar>
+
+    <div class="container flex-fill">
+        <ng-content></ng-content>
+    </div>
+    
+    <etiya-footer></etiya-footer>
 </div>
-<etiya-loading-overlay></etiya-loading-overlay>
+
+
 

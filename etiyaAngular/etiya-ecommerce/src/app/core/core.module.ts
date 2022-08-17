@@ -11,7 +11,18 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { LocalStorageService } from './storage/services/local-storage/local-storage.service';
+import { StorageService } from './storage/services/storageService';
 
+export function jwtOptionsFactory(storageService:StorageService) {
+  return {
+    tokenGetter: () => {
+      return storageService.get('token');
+    },
+    allowedDomains: ['localhost:3000']
+  }
+}
 
 @NgModule({
   declarations: [
@@ -25,7 +36,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     StorageModule,
     InputTextModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [LocalStorageService]
+      }
+    })
   ],
   exports:[
     CreateFakeArrayPipe,

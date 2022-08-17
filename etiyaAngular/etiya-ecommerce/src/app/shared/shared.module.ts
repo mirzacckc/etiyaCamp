@@ -6,6 +6,9 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import {SkeletonModule} from 'primeng/skeleton';
 import { CardSkeletonComponent } from './components/card-skeleton/card-skeleton.component';
 import { CoreModule } from '../core/core.module';
+import { RouterModule } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardHomeComponent } from './pages/dashboard-home/dashboard-home.component';
 
 
 
@@ -14,18 +17,20 @@ import { CoreModule } from '../core/core.module';
     NavbarComponent,
     MainLayoutComponent,
     DashboardLayoutComponent,    
-    CardSkeletonComponent
+    CardSkeletonComponent, FooterComponent, DashboardHomeComponent
   ],
   imports: [
     CommonModule,
     SkeletonModule,
-    CoreModule
+    CoreModule,
+    RouterModule
     
   ],
   exports:[
     NavbarComponent,
     MainLayoutComponent,
     DashboardLayoutComponent,
-    CardSkeletonComponent]
+    CardSkeletonComponent,
+    FooterComponent]
 })
 export class SharedModule { }

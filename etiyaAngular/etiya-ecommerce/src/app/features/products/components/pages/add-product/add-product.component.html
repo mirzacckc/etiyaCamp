@@ -1,4 +1,4 @@
-<etiya-main-layout>
+<!-- <etiya-main-layout> -->
     <div class="grid p-fluid">
         <br>
         <h3 style="color:blue">Add Product</h3>
@@ -36,8 +36,8 @@
 
             <div class="col-4 md:col-4 mb-4">
                 <span class="p-float-label">
-                    <input id="float-input" type="text" pInputText formControlName="unitsPrice">
-                    <label for="float-input">Units Price</label>
+                    <input id="float-input" type="text" pInputText formControlName="unitPrice">
+                    <label for="float-input">Unit Price</label>
                 </span>
             </div>
 
@@ -47,7 +47,9 @@
                     <label for="float-input">Quantity Per Unit</label>
                 </span>
             </div>
-            <button style="width:430px" (click)="addProduct()" pButton type="button" label="Add Product" ></button>
+            <div  class="col-4 md:col-4 mb-4">
+                <button (click)="addProduct()" pButton type="button" label="Add Product" ></button>
+            </div>           
         </form>
     </div>
-</etiya-main-layout>
+<!-- </etiya-main-layout> -->
