@@ -11,6 +11,7 @@
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
 <a href="https://www.primefaces.org/primeng/" target="_blank" rel="noreferrer"><img src="https://www.primefaces.org/primeng/assets/showcase/images/primeng-logo-dark.svg" width="80" height="36" alt="PrimeNG" /></a>
 <a href="https://ngrx.io/" target="_blank" rel="noreferrer"><img src="https://ngrx.io/assets/images/badge.svg" width="36" height="36" alt="NGRX" /></a>
+<a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/182px-Npm-logo.svg.png" width="65" height="36" alt="npm" /></a>
 </p>
 
 <br>
