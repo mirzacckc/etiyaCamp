@@ -121,7 +121,7 @@
     width: 3px;
     height: 223px;
     left: 40px;
-    top: -32px;
+    top: -60px;
 
     background: #F58220;
     border-radius: 2px;
@@ -133,32 +133,7 @@
     width: 3px;
     height: 62px;
     left: 20px;
-    top: 70px;
-
-    background: #F58220;
-    border-radius: 2px;
-    transform: rotate(-180deg);
-}
-
-.mini-horizontalLine {
-
-    position: absolute;
-    width: 3px;
-    height: 223px;
-    left: 40px;
-    top: -32px;
-
-    background: #F58220;
-    border-radius: 2px;
-    transform: rotate(-90deg);
-}
-
-.mini-verticalLine {
-    position: absolute;
-    width: 3px;
-    height: 62px;
-    left: 20px;
-    top: 65px;
+    top: 35px;
 
     background: #F58220;
     border-radius: 2px;
@@ -171,7 +146,7 @@
     width: 3px;
     height: 137px;
     left: 250px;
-    top: -10px;
+    top: -30px;
 
     background: #F58220;
     border-radius: 2px;
@@ -183,7 +158,7 @@
     width: 3px;
     height: 70px;
     left: 295px;
-    top: 8px;
+    top: -15px;
     
     background: #F58220;
     border-radius: 2px;
