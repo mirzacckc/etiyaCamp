@@ -6,6 +6,8 @@ import { SettingsMenuComponent } from './components/settings-menu/settings-menu.
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ContainerComponent } from './components/container/container.component';
 
 
 
@@ -16,7 +18,9 @@ import { TableInfoComponent } from './components/table-info/table-info.component
     SettingsMenuComponent,
     NavbarComponent,
     UserInfoComponent,
-    TableInfoComponent
+    TableInfoComponent,
+    NotFoundComponent,
+    ContainerComponent
   ],
   imports: [
     CommonModule
@@ -27,7 +31,9 @@ import { TableInfoComponent } from './components/table-info/table-info.component
     SettingsMenuComponent,
     NavbarComponent,
     UserInfoComponent,
-    TableInfoComponent
+    TableInfoComponent,
+    NotFoundComponent,
+    ContainerComponent
   ]
 })
 export class SharedModule { }
