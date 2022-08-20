@@ -8,6 +8,11 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import { TableInfoComponent } from './components/table-info/table-info.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ContainerComponent } from './components/container/container.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { WarningMessageComponent } from './components/warning-message/warning-message.component';
+import { MainLayoutComponent } from './components/main-layout/main-layout.component';
+import { InfoTitleComponent } from './components/info-title/info-title.component';
+import { AddNewItemButtonComponent } from './components/add-new-item-button/add-new-item-button.component';
 
 
 
@@ -20,7 +25,12 @@ import { ContainerComponent } from './components/container/container.component';
     UserInfoComponent,
     TableInfoComponent,
     NotFoundComponent,
-    ContainerComponent
+    ContainerComponent,
+    ConfirmComponent,
+    WarningMessageComponent,
+    MainLayoutComponent,
+    InfoTitleComponent,
+    AddNewItemButtonComponent
   ],
   imports: [
     CommonModule
@@ -33,7 +43,12 @@ import { ContainerComponent } from './components/container/container.component';
     UserInfoComponent,
     TableInfoComponent,
     NotFoundComponent,
-    ContainerComponent
+    ContainerComponent,
+    ConfirmComponent,
+    WarningMessageComponent,
+    MainLayoutComponent,
+    InfoTitleComponent,
+    AddNewItemButtonComponent
   ]
 })
 export class SharedModule { }
