@@ -1,0 +1,75 @@
+/* warning toast */
+.e-warn-container {
+    margin-top: 15px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    height: 59px;
+  
+    background: #83a6d1;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .e-warn-img {
+    width: 91px;
+    height: 79px;
+  }
+  
+  .e-warn-text {
+    height: 45px;
+    font-family: 'Anybody';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* confirm toast */
+
+  .e-confirm-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    height: 300px;
+  }
+  
+  .e-confirm-content {
+    margin: 0;
+    width: 300px;
+    height: 200px;
+    background: #ffffff;
+    border: 2px solid #f58220;
+  }
+  
+  .e-confirm-message-text {
+    padding: 30px 22px;
+    width: 261px;
+    height: 115px;
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    color: #2a5183;
+  }
+  
+  .e-btn-confirm {
+    width: 83px;
+    height: 38px;
+    left: 672px;
+    top: 644px;
+    background: rgba(245, 130, 32, 0.75);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Anybody';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #ffffff;
+  }
