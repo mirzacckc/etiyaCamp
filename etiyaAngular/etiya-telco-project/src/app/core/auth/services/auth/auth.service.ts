@@ -24,11 +24,15 @@ export class AuthService {
   login(userForLoginModel:UserForLogin):Observable<UserLoginResponse>{
     const subject = new Subject<UserLoginResponse>();
     this.httpClient.post<UserLoginResponse>(this.apiControllerUrl + '/login',
-    userForLoginModel).subscribe(response =>{
+    userForLoginModel).subscribe({next:response =>{
       if (!response.success) return;
       this.saveToken(response)
       subject.next(response);
-    });
+    },error:(err) =>{
+      subject.error(err);
+    },complete:() =>{
+      subject.complete();
+    }});
 
     return subject.asObservable();
   }

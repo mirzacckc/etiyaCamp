@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -9,9 +10,10 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!:FormGroup
+  loginForm!: FormGroup
 
-  constructor(private formBuilder:FormBuilder,private authService:AuthService,private router:Router) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router,
+    private messageService:MessageService) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -23,16 +25,18 @@ export class LoginComponent implements OnInit {
       password: [''],
     });
   }
-  
+
   login() {
-    this.authService.login(this.loginForm.value).subscribe((response) => {
-      console.log(response, new Date().toISOString());      
-        this.authService.saveToken(response);
+    this.authService.login(this.loginForm.value).subscribe({
+      next: (response) => {
+        console.log(response)
         setTimeout(() => {
-          this.router.navigateByUrl('homepage')
+          this.router.navigateByUrl('showcase')
         }, 1000);
-       
-      
+      },error:(err) =>{
+        console.log(err)
+        this.messageService.add({severity:'warn',detail:'Giriş bilgileri uyuşmuyor',key:'etiya-warn'})
+      }
     });
   }
 

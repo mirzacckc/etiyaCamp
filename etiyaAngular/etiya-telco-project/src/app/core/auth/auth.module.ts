@@ -9,7 +9,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {ToastModule} from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -24,7 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputTextModule,
     CheckboxModule,
     SharedModule,
-    ReactiveFormsModule    
-  ]
+    ReactiveFormsModule,
+    ToastModule,
+    BrowserAnimationsModule    
+  ],
+  providers:[MessageService]
 })
 export class AuthModule { }

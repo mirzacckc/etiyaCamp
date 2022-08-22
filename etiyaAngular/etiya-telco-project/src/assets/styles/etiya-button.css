@@ -10,15 +10,16 @@ add new adress */
 .e-btn-login {
     width: 100%;
     height: 50px;
-    background-color: #F58220;
+    background-color: #F58220 !important;
     
-    font-weight: 700;
+    font-family: 'Anybody';
+    font-weight: bold;
     font-size: 22px;
     line-height: 23px;
 
     letter-spacing: 0.06em;
 
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 
     border: 2px solid #F58220;
     box-shadow: inset 0px 4px 6px 2px rgba(0, 0, 0, 0.25);

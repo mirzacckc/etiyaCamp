@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:wght@600&display=swap%27');
+
 .e-title-container {
     position: relative;
     overflow: hidden;
-    display: block;
+    display: block;text-align: left;
 }
 
 
