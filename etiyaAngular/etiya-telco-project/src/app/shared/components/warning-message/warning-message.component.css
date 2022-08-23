@@ -3,7 +3,7 @@
     margin-left: 12px;
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 100%;
     height: 59px;
   
     background: #83a6d1;
@@ -17,13 +17,26 @@
   }
   
   .e-warn-text {
-    height: 45px;
     font-family: 'Anybody';
     font-style: bold;
     font-weight: 700;
     font-size: 21px;
     line-height: 23px;
     letter-spacing: 0.02em;
-    color: #000000;
+    color: #000000!important;
     margin: 0;
   }
+
+  ::ng-deep .p-toast-top-right{
+    width: 700px!important;
+    padding: none;
+    text-align: center;
+  }
+
+  ::ng-deep .p-toast .p-toast-message .p-toast-icon-close {
+    display: none;
+}
+
+::ng-deep .p-toast .p-toast-message .p-toast-icon-close:hover {
+    display: none;
+}
