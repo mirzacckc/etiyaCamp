@@ -91,6 +91,18 @@
     opacity: 0.6;
 }
 
-::ng-deep .p-toast-icon{
+::ng-deep .warn-toast .p-toast .p-toast-message .p-toast-icon-close {
+    display: none;
+}
+
+::ng-deep .warn-toast .p-toast .p-toast-message .p-toast-icon-close:hover {
+    display: none;
+} 
+
+.invalid-input{
+    border-color: red;
+}
+
+.invalid-input::placeholder{
     color: red;
 }

@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
+import { StoreModule } from '@ngrx/store';
+import { authReducers } from './store/auth.reducers';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { MessageService } from 'primeng/api';
     SharedModule,
     ReactiveFormsModule,
     ToastModule,
-    BrowserAnimationsModule    
+    BrowserAnimationsModule,
+    StoreModule.forRoot(authReducers)    
   ],
   providers:[MessageService]
 })

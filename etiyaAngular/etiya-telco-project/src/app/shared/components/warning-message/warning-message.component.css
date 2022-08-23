@@ -27,16 +27,16 @@
     margin: 0;
   }
 
-  ::ng-deep .p-toast-top-right{
+::ng-deep .etiya-warn-toast .p-toast {
     width: 700px!important;
     padding: none;
     text-align: center;
   }
 
-  ::ng-deep .p-toast .p-toast-message .p-toast-icon-close {
+.p-toast .p-toast-message .p-toast-icon-close {
     display: none;
 }
 
-::ng-deep .p-toast .p-toast-message .p-toast-icon-close:hover {
+.p-toast .p-toast-message .p-toast-icon-close:hover {
     display: none;
-}
+} 

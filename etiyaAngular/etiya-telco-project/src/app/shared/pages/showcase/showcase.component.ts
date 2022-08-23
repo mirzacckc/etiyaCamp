@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { Observable } from 'rxjs';
+import { TokenUserModel } from 'src/app/core/auth/models/tokenUserModel';
+import { AuthService } from 'src/app/core/auth/services/auth/auth.service';
 
 @Component({
   templateUrl: './showcase.component.html',
@@ -10,7 +13,9 @@ export class ShowcaseComponent implements OnInit {
   @Input() customSummary!:string;
   @Input() customDetail!:string;
 
-  constructor(private messageService: MessageService) {}
+  
+
+  constructor(private messageService: MessageService) {  }
 
   ngOnInit(): void {}
 
@@ -25,6 +30,10 @@ export class ShowcaseComponent implements OnInit {
   onReject() {
       this.messageService.clear('c')
   }
+
+  
+
+ 
 
 
 }
