@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { LocalStorageService } from 'src/app/core/storage/services/local-storage/local-storage.service';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup
   loginCount:number =0;
+  rememberMe:boolean = false;
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router,
-    private messageService:MessageService,private primengConfig: PrimeNGConfig) { }
+    private messageService:MessageService,private primengConfig: PrimeNGConfig,private localStorageService:LocalStorageService) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -34,7 +36,8 @@ export class LoginComponent implements OnInit {
       return
     }
     this.authService.login(this.loginForm.value).subscribe({
-      next: (response) => {
+      next: (response) => {        
+      this.localStorageService.set('Checkbox',this.rememberMe); 
         this.loginCount =0;
         console.log(response)
         setTimeout(() => {          
@@ -60,6 +63,12 @@ export class LoginComponent implements OnInit {
 
   IsPropertyInvalid(name:string){
     return this.loginForm.get(name)?.touched && this.loginForm.get(name)?.hasError('required')
+  }
+  
+
+  fieldsChange(values:any):void {
+    console.log(values.currentTarget.checked);    
+    this.rememberMe=values.currentTarget.checked
   }
 
 }
