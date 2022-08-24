@@ -26,7 +26,7 @@
     
 } 
 
-.mc {
+.login-general-container {
     background-color: transparent !important;
     position: absolute;
     top: 50%;
@@ -35,11 +35,11 @@
     
 }
 
-.mc1{
+.login-title1{
     color: #FFFF !important;
 }
 
-.mc2{
+.login-title2{
     color: #f5821f !important;
 }
 

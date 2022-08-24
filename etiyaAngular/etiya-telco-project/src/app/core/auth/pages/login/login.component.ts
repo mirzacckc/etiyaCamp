@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     }
     this.authService.login(this.loginForm.value).subscribe({
       next: (response) => {        
-      this.localStorageService.set('Checkbox',this.rememberMe); 
+      this.localStorageService.set('rememberMe',this.rememberMe); 
         this.loginCount =0;
         console.log(response)
         setTimeout(() => {          
